@@ -14,16 +14,26 @@ const myDialog = document.querySelector("#book-dialog");
 const tbody = document.querySelector("tbody");
 const myLibrary = [];
 
-function Book(id, title, author, pages, read){
-    if(!new.target){
-        throw Error("please use NEW to call the constructor");
+// function Book(id, title, author, pages, read){
+//     if(!new.target){
+//         throw Error("please use NEW to call the constructor");
+//     }
+//     this.id = id;
+//     this.title = title;
+//     this.author= author;
+//     this.pages= pages;
+//     this.read= read;
+// };
+
+class Book{
+    constructor(id, title, author, pages, read){
+        this.id = id;
+        this.title = title;
+        this.author= author;
+        this.pages= pages;
+        this.read= read;
     }
-    this.id = id;
-    this.title = title;
-    this.author= author;
-    this.pages= pages;
-    this.read= read;
-};
+}
 
 Book.prototype.readState = function(){
     if(!this.read){
